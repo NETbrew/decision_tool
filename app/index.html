@@ -5,57 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class="mx-20">
     <header class="mt-16">
       <h1 class="font-bold uppercase text-3xl">Welke kanalen kan ik best gebruiken?</h1>
-      <p class="text-slate-500">Vul het formulier onderaan in en je zal de 2 beste media vinden om uw project te adverteren naar de mensen van Nijlen</p>
+      <p class="text-slate-500">Vul het formulier onderaan in en je zal de 3 beste media vinden om uw project te adverteren naar de mensen van Nijlen</p>
     </header>
-    <main class="mt-10">
-      <div>
-        <form>
-          <p class="py-2">
-              <label for="cat1">Categorie 1:</label>
-              <input type="range" name="categorie 1" id="cat1" min="1" max="6" value="1">
-              <span id="place-cat1" class="py-1 px-2 ml-4 bg-slate-500 rounded text-white">1</span>
-          </p>
-          <p class="py-2">
-              <label for="cat2">Categorie 2:</label>
-              <input type="range" name="categorie 2" id="cat2" min="1" max="6" value="1">
-              <span id="place-cat2" class="py-1 px-2 ml-4 bg-slate-500 rounded text-white">1</span>
-          </p>
-          <p class="py-2">
-              <label for="cat3">Categorie 3:</label>
-              <input type="range" name="categorie 3" id="cat3" min="1" max="6" value="1">
-              <span id="place-cat3" class="py-1 px-2 ml-4 bg-slate-500 rounded text-white">1</span>
-          </p>
-          <p class="py-2">
-              <label for="cat4">Categorie 4:</label>
-              <input type="range" name="categorie 4" id="cat4" min="1" max="6" value="1">
-              <span id="place-cat4" class="py-1 px-2 ml-4 bg-slate-500 rounded text-white">1</span>
-          </p>
-          <p class="py-2">
-              <label for="cat5">Categorie 5:</label>
-              <input type="range" name="categorie 5" id="cat5" min="1" max="6" value="1">
-              <span id="place-cat5" class="py-1 px-2 ml-4 bg-slate-500 rounded text-white">1</span>
-          </p>
-          <p  class="pt-2 mb-6">
-              <label for="cat6">Categorie 6:</label>
-              <input type="range" name="categorie 6" id="cat6" min="1" max="6" value="1">
-              <span id="place-cat6" class="py-1 px-2 ml-4 bg-slate-500 rounded text-white">1</span>
-          </p>
-          <button type="button" class="py-3 px-4 bg-blue-500 text-white rounded-lg" onclick="calculate()">Calculate</button>
-      </form>
+    <main class="mt-10 flex">
+      <div class="w-1/2">
+        <div class="w-10/12">
+          <h2 class="font-bold text-2xl mb-10">Criteria:</h2>
+          <form>
+            <div class="py-2">
+              <label class="font-bold block mb-2" for="cat1">Bereik</label>
+              <input class="w-10/12" type="range" name="categorie 1" id="cat1" min="1" max="6" value="1">
+              <span id="place-cat1" class="py-1 px-2 mt-2 bg-slate-500 rounded text-white">1</span>
+              <p class="text-gray-400  mt-3"><span class="mr-3"><i class="fa-solid fa-circle-info"></i></span>1 is als je een
+                grote doelgroep wilt bereiken en 6 is als je een nauwe doelgroep hebt</p>
+            </div>
+            <div class="py-2">
+              <label class="font-bold block mb-2" for="cat2">Persoonlijk</label>
+              <input class=" w-10/12" type="range" name="categorie 2" id="cat2" min="1" max="6" value="1">
+              <span id="place-cat2" class="py-1 px-2 mt-2 bg-slate-500 rounded text-white">1</span>
+              <p class="text-gray-400  mt-3"><span class="mr-3"><i class="fa-solid fa-circle-info"></i></span>1 is voor algemene
+                communicaties en 6 is als je een persoonlijk bericht wil versturen</p>
+            </div>
+            <div class="py-2">
+              <label class="font-bold block mb-2" for="cat3">Snelheid</label>
+              <input class="w-10/12" type="range" name="categorie 3" id="cat3" min="1" max="6" value="1">
+              <span id="place-cat3" class="py-1 px-2 mt-2 bg-slate-500 rounded text-white">1</span>
+              <p class="text-gray-400 mt-3"><span class="mr-3"><i class="fa-solid fa-circle-info"></i></span>1 is voor berichten
+                die lang op voorhand moeten worden verstuurd en 6 is voor communicaties die zeer dringend uit moeten gaan</p>
+            </div>
+            <button type="button" class="py-3 px-4 mt-10 bg-blue-500 text-white rounded-lg" onclick="calculate()">Geef
+              Resultaat</button>
+          </form>
+        </div>
       </div>
-      <div class="mt-10">
-        <h2 class="font-bold text-2xl">Aanbevolen kanalen:</h2>
-        <ul id="uitkomst">
-          <li></li>
-        </ul>
+      <div class="w-1/2">
+        <div class="w-10/12">
+          <h2 class="font-bold text-2xl mb-10">Aanbevolen kanalen:</h2>
+          <ul id="uitkomst">
+            <li style="list-style: none;">selecteer eerst enkele criteria...</li>
+          </ul>
+        </div>
       </div>
   </main>
 
   <script>
+
       document.addEventListener('DOMContentLoaded', function() {
           const sliders = document.querySelectorAll('input[type="range"]');
           
@@ -67,11 +68,21 @@
           });
       });
 
-      let brief = {'cat1': 1,'cat2': 2,'cat3': 4,'cat4': 5,'cat5': 3,'cat6': 6,}
+      let brieven = {'cat1': 4,'cat2': 4,'cat3': 2,}
+      let infoborden = {'cat1': 3,'cat2': 1,'cat3': 5,}
+      let email = {'cat1': 3,'cat2': 4,'cat3': 5,}
+      let facebook = { 'cat1': 4, 'cat2': 3, 'cat3': 5, }
+      let flyers_affiches = { 'cat1': 5, 'cat2': 1, 'cat3': 2, }
+      let infovergadering = { 'cat1': 2, 'cat2': 5, 'cat3': 2, }
+      let instagram = { 'cat1': 3, 'cat2': 3, 'cat3': 5, }
+      let linkedin = { 'cat1': 3, 'cat2': 3, 'cat3': 5, }
+      let magazine_bekend = { 'cat1': 4, 'cat2': 2, 'cat3': 1, }
+      let nieuwsbrief = { 'cat1': 5, 'cat2': 2, 'cat3': 3, }
+      let persoonlijk_contact = { 'cat1': 1, 'cat2': 6, 'cat3': 6, }
+      let smartschool = { 'cat1': 4, 'cat2': 3, 'cat3': 3, }
+      let gepersonaliseerde_uitnodiging = { 'cat1': 1, 'cat2': 5, 'cat3': 2, }
+      let website = { 'cat1': 6, 'cat2': 1, 'cat3': 5, }
 
-      let mail = {'cat1': 6,'cat2': 3,'cat3': 5,'cat4': 1,'cat5': 2,'cat6': 4,}
-
-      let facebook = {'cat1': 5,'cat2': 1,'cat3': 4,'cat4': 3,'cat5': 2,'cat6': 2,}
 
       function getTopTwoValues(dict) {
                 // Convert dictionary to an array of key-value pairs
@@ -80,34 +91,77 @@
                 // Sort the array by values in descending order
                 entries.sort((a, b) => b[1] - a[1]);
 
-                // Extract the top two entries
-                const topTwo = entries.slice(0, 2);
-
-                return topTwo;
+                return entries;
             }
 
       function calculate() {
         let weightCat1 = document.getElementById('cat1').value;
         let weightCat2 = document.getElementById('cat2').value;
         let weightCat3 = document.getElementById('cat3').value;
-        let weightCat4 = document.getElementById('cat4').value;
-        let weightCat5 = document.getElementById('cat5').value;
-        let weightCat6 = document.getElementById('cat6').value;
 
-        let briefScore = (weightCat1 * brief['cat1']) + (weightCat2 * brief['cat2']) + (weightCat3 * brief['cat3']) + (weightCat4 * brief['cat4']) + (weightCat5 * brief['cat5']) + (weightCat6 * brief['cat6']);
-        let mailScore = (weightCat1 * mail['cat1']) + (weightCat2 * mail['cat2']) + (weightCat3 * mail['cat3']) + (weightCat4 * mail['cat4']) + (weightCat5 * mail['cat5']) + (weightCat6 * mail['cat6']);
-        let facebookScore = (weightCat1 * facebook['cat1']) + (weightCat2 * facebook['cat2']) + (weightCat3 * facebook['cat3']) + (weightCat4 * facebook['cat4']) + (weightCat5 * facebook['cat5']) + (weightCat6 * facebook['cat6']);
+        // brieven score
+        let brievenScore = (weightCat1 * brieven['cat1']) + (weightCat2 * brieven['cat2']) + (weightCat3 * brieven['cat3']);
+        // infoborder score
+        let infobordenScore = (weightCat1 * infoborden['cat1']) + (weightCat2 * infoborden['cat2']) + (weightCat3 * infoborden['cat3']);
+        // email score
+        let emailScore = (weightCat1 * email['cat1']) + (weightCat2 * email['cat2']) + (weightCat3 * email['cat3']);
+        // brieven score
+        let facebookScore = (weightCat1 * facebook['cat1']) + (weightCat2 * facebook['cat2']) + (weightCat3 * facebook['cat3']);
+        // flyer affiche score
+        let flyers_affichesScore = (weightCat1 * flyers_affiches['cat1']) + (weightCat2 * flyers_affiches['cat2']) + (weightCat3 * flyers_affiches['cat3']);
+        // infovergadering score
+        let infovergaderingScore = (weightCat1 * infovergadering['cat1']) + (weightCat2 * infovergadering['cat2']) + (weightCat3 * infovergadering['cat3']);
+        // instagram score
+        let instagramScore = (weightCat1 * instagram['cat1']) + (weightCat2 * instagram['cat2']) + (weightCat3 * instagram['cat3']);
+        // linkedin score
+        let linkedinScore = (weightCat1 * linkedin['cat1']) + (weightCat2 * linkedin['cat2']) + (weightCat3 * linkedin['cat3']);
+        // magazine bekend score
+        let magazine_bekendScore = (weightCat1 * magazine_bekend['cat1']) + (weightCat2 * magazine_bekend['cat2']) + (weightCat3 * magazine_bekend['cat3']);
+        // nieuwsbrief score
+        let nieuwsbriefScore = (weightCat1 * nieuwsbrief['cat1']) + (weightCat2 * nieuwsbrief['cat2']) + (weightCat3 * nieuwsbrief['cat3']);
+        // persoonlijk contact score
+        let persoonlijk_contactScore = (weightCat1 * persoonlijk_contact['cat1']) + (weightCat2 * persoonlijk_contact['cat2']) + (weightCat3 * persoonlijk_contact['cat3']);
+        // smartschool score
+        let smartschoolScore = (weightCat1 * smartschool['cat1']) + (weightCat2 * smartschool['cat2']) + (weightCat3 * smartschool['cat3']);
+        // gepersonaliseerde uitnodiging score
+        let gepersonaliseerde_uitnodigingScore = (weightCat1 * gepersonaliseerde_uitnodiging['cat1']) + (weightCat2 * gepersonaliseerde_uitnodiging['cat2']) + (weightCat3 * gepersonaliseerde_uitnodiging['cat3']);
+        // website score
+        let websiteScore = (weightCat1 * website['cat1']) + (weightCat2 * website['cat2']) + (weightCat3 * website['cat3']);
+        
 
         let finalScores = {
-            'brief': briefScore,
-            'mail': mailScore,
+            'brieven': brievenScore,
+            'Infoborden': infobordenScore,
+            'email': emailScore,
             'facebook': facebookScore,
+            'flyers en affiches': flyers_affichesScore,
+            'infovergadering': infovergaderingScore,
+            'Instagram': instagramScore,
+            'LinkedIn': linkedinScore,
+            'Magazine BEKEND': magazine_bekendScore,
+            'Nieuwsbrief (2 wekelijks)': nieuwsbriefScore,
+            'Persoonlijk contact': persoonlijk_contactScore,
+            'Smartschool': smartschoolScore,
+            'Gepersonaliseerde uitnodiging': gepersonaliseerde_uitnodigingScore,
+            'Website (gemeente, academie...)': websiteScore,
         }
+
+        // Clear previous results
+        const uitkomst = document.getElementById('uitkomst');
+        uitkomst.innerHTML = '';
 
        getTopTwoValues(finalScores).forEach(([key, value], index) => {
             const li = document.createElement('li');
             li.textContent = `${index + 1}. ${key}`;
             document.getElementById('uitkomst').appendChild(li);
+        });
+
+        // make the top 3 bold
+        const topThree = document.querySelectorAll('li');
+        topThree.forEach((li, index) => {
+            if (index < 3) {
+                li.style.fontWeight = 'bold';
+            }
         });
 
       }
