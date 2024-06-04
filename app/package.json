@@ -1,9 +1,12 @@
 {
+  "homepage": "https:///NETbrew.github.io/NETbrew/decision_tool/",
   "name": "app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
